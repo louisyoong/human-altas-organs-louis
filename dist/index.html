@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Explore the human body in 3D. Discover anatomical structures, reveal body systems, and see how everything connects."
+    />
+    <title>Human Atlas — Anatomy Explorer</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="importmap">
+      { "imports": { "three": "./three.js" } }
+    </script>
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="./"
+        ><span class="mark">H<span> / </span>A</span
+        ><span>HUMAN ATLAS<small>ANATOMY EXPLORER</small></span></a
+      >
+      <div class="edition">EXPLORE. ISOLATE. UNDERSTAND.</div>
+      <button id="about">About this atlas <span>↗</span></button>
+    </header>
+    <div class="category-strip">
+      <div class="category-heading">
+        EXPLORE<br /><strong>THE HUMAN BODY</strong>
+      </div>
+      <nav id="categories" aria-label="Anatomy categories"></nav>
+    </div>
+    <main>
+      <aside class="sidebar">
+        <div class="panel-title">
+          <span class="eyebrow">EXPLORER</span
+          ><span class="panel-number">01 / LAYERS</span>
+        </div>
+        <label class="search"
+          ><span>⌕</span
+          ><input
+            id="search"
+            placeholder="Find a structure…"
+            aria-label="Search anatomical structures"
+          /><kbd>/</kbd></label
+        >
+        <div id="results" hidden></div>
+        <div class="section-heading">
+          <h2 id="layerTitle">Body systems</h2>
+          <button id="toggleAll">Hide all</button>
+        </div>
+        <div id="systems"></div>
+        <button id="internalView" hidden>Reveal inside the heart</button>
+        <div class="source-label">
+          REFERENCE MODEL <span>01</span
+          ><strong id="referenceName">Adult male anatomy</strong
+          ><small>BodyParts3D · Open anatomical data</small>
+        </div>
+      </aside>
+      <section class="viewport" aria-label="3D anatomy explorer">
+        <div id="scene"></div>
+        <div class="scene-label">
+          <span class="eyebrow">HUMAN ATLAS / 3D STUDY</span>
+          <h2 id="categoryName">Full body</h2>
+          <p id="categoryNote">Explore every body system in context.</p>
+          <strong id="viewLabel">Anterior perspective</strong>
+        </div>
+        <div class="model-meta">
+          <span id="partCount">Loading anatomy</span
+          ><span id="layerCount">15 body systems</span>
+        </div>
+        <div id="loading">
+          <div class="spinner"></div>
+          <strong>Preparing your atlas</strong
+          ><span id="progress">Loading anatomical structures…</span>
+        </div>
+        <div class="views" aria-label="Camera views">
+          <button data-view="front" class="active">Front</button
+          ><button data-view="back">Back</button
+          ><button data-view="side">Side</button>
+        </div>
+        <div class="zoom">
+          <button id="zoomIn" aria-label="Zoom in">+</button
+          ><button id="zoomOut" aria-label="Zoom out">−</button
+          ><button id="reset" aria-label="Reset view">⟲</button>
+        </div>
+        <div class="bottom-bar">
+          <div>
+            <span class="eyebrow">STRUCTURE SEPARATION</span
+            ><label
+              ><span>Assembled</span
+              ><input
+                id="explode"
+                type="range"
+                min="0"
+                max="100"
+                value="0"
+                aria-label="Explode anatomy"
+              /><span>Separated</span></label
+            >
+          </div>
+          <span class="hint"
+            >Drag to rotate · Scroll to zoom · Click to inspect</span
+          >
+        </div>
+        <div id="detail" hidden>
+          <button class="close" id="closeDetail" aria-label="Close details">
+            ×
+          </button>
+          <div class="eyebrow" id="detailSystem"></div>
+          <h2 id="detailName"></h2>
+          <p id="detailCopy"></p>
+          <div class="reference">
+            STRUCTURE ID <strong id="detailId"></strong>
+          </div>
+          <button id="isolate" class="primary">Isolate structure ↗</button
+          ><button id="clear">Clear selection</button>
+        </div>
+      </section>
+    </main>
+    <dialog id="aboutDialog">
+      <button class="close" id="closeAbout" aria-label="Close about">×</button>
+      <div class="eyebrow">SOURCE & SCOPE</div>
+      <h2>A body, revealed.</h2>
+      <p>
+        Choose the full body, heart, brain, kidneys, lungs, liver, stomach,
+        pancreas, or spleen. Explore 2,234 anatomical meshes from the adult male
+        BodyParts3D reference. Select a system, search for a structure, or click
+        directly on the body to inspect it.
+      </p>
+      <p>
+        Organ categories follow named concepts in the source dataset; the heart
+        uses a focused selection of 93 structures. Chamber cavities appear as
+        solid volumes. Hide Heart walls to inspect the interior. This model does
+        not represent every structure or human variation. Colors and simplified
+        geometry support exploration. For education, not diagnosis or surgical
+        planning.
+      </p>
+      <p>
+        BodyParts3D, © The Database Center for Life Science, licensed under
+        Creative Commons Attribution 4.0 International.
+      </p>
+      <a
+        href="https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html"
+        target="_blank"
+        rel="noreferrer"
+        >Dataset & license ↗</a
+      >
+    </dialog>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

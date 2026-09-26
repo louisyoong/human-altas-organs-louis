@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Help and support for Human Atlas — Anatomy Explorer. Answers to common questions and how to contact us."
+    />
+    <title>Support — Human Atlas</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        min-height: 100vh;
+        background: var(--bg);
+      }
+      .support {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 56px 24px 80px;
+        line-height: 1.6;
+      }
+      .support .eyebrow {
+        display: block;
+        font-size: 11px;
+        letter-spacing: 2.5px;
+        font-weight: 600;
+        color: var(--accent);
+        margin-bottom: 10px;
+      }
+      .support h1 {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: clamp(40px, 8vw, 56px);
+        line-height: 1;
+        letter-spacing: 0.5px;
+        margin: 0 0 16px;
+        text-transform: uppercase;
+      }
+      .support .lede {
+        color: var(--muted);
+        font-size: 17px;
+        margin: 0 0 40px;
+      }
+      .support h2 {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 26px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        margin: 48px 0 16px;
+        padding-top: 24px;
+        border-top: 1px solid var(--edge);
+      }
+      .support p,
+      .support li {
+        color: var(--muted);
+      }
+      .support strong {
+        color: var(--text);
+      }
+      .support a {
+        color: var(--accent);
+      }
+      .contact-card {
+        background: var(--panel);
+        border: 1px solid var(--edge);
+        padding: 24px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .contact-card p {
+        margin: 0;
+      }
+      .contact-card .button {
+        display: inline-block;
+        background: var(--accent);
+        color: #0c1219;
+        font-weight: 700;
+        text-decoration: none;
+        padding: 12px 20px;
+        white-space: nowrap;
+      }
+      details {
+        background: var(--panel);
+        border: 1px solid var(--edge);
+        margin-bottom: 8px;
+      }
+      summary {
+        cursor: pointer;
+        padding: 16px 20px;
+        font-weight: 600;
+        color: var(--text);
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+      }
+      summary::-webkit-details-marker {
+        display: none;
+      }
+      summary::after {
+        content: "+";
+        color: var(--accent);
+        font-weight: 700;
+      }
+      details[open] summary::after {
+        content: "–";
+      }
+      details > div {
+        padding: 0 20px 16px;
+      }
+      details > div p {
+        margin: 0 0 8px;
+      }
+      .fineprint {
+        font-size: 13px;
+        margin-top: 56px;
+        padding-top: 24px;
+        border-top: 1px solid var(--edge);
+      }
+      @media (max-width: 640px) {
+        header .edition {
+          display: none;
+        }
+        header {
+          padding: 0 16px;
+        }
+        .support {
+          padding: 40px 16px 64px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="./"
+        ><span class="mark">H<span> / </span>A</span
+        ><span>HUMAN ATLAS<small>ANATOMY EXPLORER</small></span></a
+      >
+      <div class="edition">EXPLORE. ISOLATE. UNDERSTAND.</div>
+    </header>
+
+    <main class="support">
+      <span class="eyebrow">HELP CENTER</span>
+      <h1>Support</h1>
+      <p class="lede">
+        Need a hand with Human Atlas? Find answers to common questions below, or
+        get in touch and we'll reply as soon as we can.
+      </p>
+
+      <section class="contact-card" aria-labelledby="contact-heading">
+        <div>
+          <p id="contact-heading"><strong>Contact support</strong></p>
+          <p>We usually respond within 2 business days.</p>
+        </div>
+        <!-- TODO: replace with your support email address -->
+        <a class="button" href="mailto:support@example.com?subject=Human%20Atlas%20Support"
+          >Email us</a
+        >
+      </section>
+
+      <h2>Frequently asked questions</h2>
+
+      <details>
+        <summary>How do I move around the 3D model?</summary>
+        <div>
+          <p>
+            <strong>Rotate:</strong> drag with one finger (or the mouse).
+            <strong>Zoom:</strong> pinch (or scroll).
+            <strong>Pan:</strong> drag with two fingers (or right-click and drag).
+          </p>
+          <p>Use the front, back and side view buttons to snap to a standard angle.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How do I focus on a single organ or structure?</summary>
+        <div>
+          <p>
+            Pick a category such as Heart, Brain or Lungs from the category strip,
+            then tap any structure to select it. Use <strong>Isolate</strong> to
+            hide everything else, and the exploded layout to separate the pieces.
+          </p>
+          <p>You can also search for a structure by name within the current category.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How do I show or hide body systems and layers?</summary>
+        <div>
+          <p>
+            Open the layers panel and toggle individual systems on or off. The heart
+            view adds chamber, valve, wall and vessel layers, plus a
+            <strong>Reveal inside</strong> option.
+          </p>
+        </div>
+      </details>
+
+      <details>
+        <summary>The model is blank or loading slowly. What can I do?</summary>
+        <div>
+          <p>
+            The anatomy data is detailed and may take a moment to load the first
+            time, especially on a slow connection. If the model doesn't appear:
+          </p>
+          <ul>
+            <li>Check your internet connection and reopen the app.</li>
+            <li>Make sure your device is running the latest version of iOS / iPadOS.</li>
+            <li>Close other apps to free up memory, then try again.</li>
+          </ul>
+          <p>If the problem continues, email us with your device model and OS version.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Why do some organs have only one piece?</summary>
+        <div>
+          <p>
+            Some small organs, such as the stomach and spleen, are modeled as a
+            single mesh in the source dataset, so they can't be broken down
+            further. Counts shown in each category are modeled pieces, not
+            distinct organs.
+          </p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Can I use Human Atlas for medical diagnosis?</summary>
+        <div>
+          <p>
+            No. Human Atlas is for education and exploration only. It shows an
+            adult male reference anatomy and does not represent all anatomical
+            variation. Colors and exploded positions are for clarity and do not
+            simulate physiology. Always consult a qualified medical professional
+            for health decisions.
+          </p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Do I need an account? What data do you collect?</summary>
+        <div>
+          <p>
+            No account is required. Human Atlas does not ask for personal
+            information and does not include advertising or analytics tracking.
+          </p>
+        </div>
+      </details>
+
+      <h2>Reporting a problem</h2>
+      <p>To help us fix issues quickly, please include:</p>
+      <ul>
+        <li>Your device model (e.g. iPhone 15, iPad Air)</li>
+        <li>Your iOS / iPadOS version</li>
+        <li>Which category or structure you were viewing</li>
+        <li>What happened, and a screenshot if possible</li>
+      </ul>
+
+      <p class="fineprint">
+        Anatomy data from
+        <a href="https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html"
+          >BodyParts3D</a
+        >, © The Database Center for Life Science, licensed CC BY 4.0.<br />
+        © 2026 Louis Yoong. <a href="./">Back to Human Atlas</a>
+      </p>
+    </main>
+  </body>
+</html>

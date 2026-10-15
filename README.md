@@ -1,6 +1,6 @@
 # Human Atlas Organs combined organ explorer
 
-**[Live preview →](https://human-altas-organs.vercel.app)**
+**[Live preview →](https://human-altas-organs-louis.vercel.app)**
 
 ![Human Atlas interface showing the full body view with body systems and layer controls](screenshot.png)
 
